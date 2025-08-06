@@ -9,6 +9,7 @@ import New from "./pages/New";
 function App() {
   return (
     <>
+    <h1>Hello World</h1>
       <MyProvider>
         <Router>
           <Routes>
