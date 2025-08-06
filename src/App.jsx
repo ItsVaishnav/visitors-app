@@ -12,17 +12,17 @@ function App() {
       <MyProvider>
         <Router>
           <Routes>
-            <Route path="/" element={<New />}></Route>
+            <Route path="/" element={<VisitorPage />}></Route>
             <Route path="/event" element={<EventPage></EventPage>}></Route>
           </Routes>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end pb-5 container">
+          <div className="d-grid gap-2 d-md-flex justify-content-md-end pb-5 container">
             <Link to="/">
-              <button class="btn btn-primary" type="button">
+              <button className="btn btn-primary" type="button">
                 <BsArrowLeftSquare /> Visitor Page
               </button>
             </Link>
             <Link to="/event">
-              <button class="btn btn-primary" type="button">
+              <button className="btn btn-primary" type="button">
                 Event Page <FaArrowRightToBracket />
               </button>
             </Link>

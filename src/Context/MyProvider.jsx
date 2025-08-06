@@ -1,12 +1,15 @@
-import { useState } from 'react';
-import EventContext from './EventContext';
+import { useState } from "react";
+import EventContext from "./EventContext";
 
 const MyProvider = ({ children }) => {
-  const [organizerName, setOrganizerName] = useState("Guest");
-  const [eventName, setEventName] = useState("Guest");
+  const [users, setUsers] = useState([]);
+  const [data, setData] = useState({});
+  const [current, setCurrent] = useState([]);
 
   return (
-    <EventContext.Provider value={{ organizerName, setOrganizerName ,eventName, setEventName }}>
+    <EventContext.Provider
+      value={{ data, setData, users, setUsers, current, setCurrent }}
+    >
       {children}
     </EventContext.Provider>
   );

@@ -8,7 +8,6 @@ export function TrailProvider({ children }) {
   return (
     <TrailContext.Provider value={{ data, setData }}>
       {children}
-      {/* //<App/> */}
     </TrailContext.Provider>
   );
 }

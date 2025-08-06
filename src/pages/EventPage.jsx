@@ -2,24 +2,26 @@ import { useContext, useRef } from "react";
 import InputBar from "../Components/InputBar";
 import { CgProfile } from "react-icons/cg";
 import EventContext from "../Context/EventContext";
-import { useTrailContext } from "../Context/TrailContext";
+// import { useTrailContext } from "../Context/TrailContext";
 
 export default function EventPage() {
-  const { organizerName, setOrganizerName, eventName, setEventName } =
-    useContext(EventContext);
+  const { data,setData } = useContext(EventContext);
 
   const currentEvent = useRef("");
   const currentOrg = useRef("");
 
   const HandleOnClick = () => {
-    setOrganizerName(currentOrg.current.value);
-    setEventName(currentEvent.current.value);
-    console.log(currentOrg.current.value);
-    console.log(currentEvent.current.value);
+    let list = {organizerName : currentOrg.current.value,eventName :currentEvent.current.value}
+    setData(list);
   };
 
-  const { data, setData } = useTrailContext();
-  console.log(data);
+  const HandleOnDelete = () =>{
+    let list = {}
+    setData(list);
+  }
+
+  // const { data, setData } = useTrailContext();
+  // console.log(data);
 
   return (
     <>
@@ -44,10 +46,17 @@ export default function EventPage() {
           >
             Save Event Information
           </button>
+          <button
+            className="btn btn-primary"
+            type="button"
+            onClick={HandleOnDelete}
+          >
+            Delete Current Events
+          </button>
         </div>
         <div className="container px-5 ">
-          <h3>Organizer : {organizerName}</h3>
-          <h3>Event : {eventName}</h3>
+          <h3>Organizer : {data.organizerName}</h3>
+          <h3>Event : {data.eventName}</h3>
         </div>
       </div>
     </>
