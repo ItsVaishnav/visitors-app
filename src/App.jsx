@@ -1,22 +1,22 @@
 import VisitorPage from "./pages/VisitorPage";
 import { FaArrowRightToBracket } from "react-icons/fa6";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// Use Hash Router
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import EventPage from "./pages/EventPage";
 import { BsArrowLeftSquare } from "react-icons/bs";
 import MyProvider from "./Context/MyProvider";
-import New from "./pages/New";
+// import New from "./pages/New";
 
 function App() {
   return (
     <>
-    <h1>Hello World</h1>
       <MyProvider>
         <Router>
           <Routes>
             <Route path="/" element={<VisitorPage />}></Route>
             <Route path="/event" element={<EventPage></EventPage>}></Route>
           </Routes>
-          <div className="d-grid gap-2 d-md-flex justify-content-md-end pb-5 container">
+          <div className="d-grid gap-2 d-md-flex justify-content-md-end pb-5 container w-50">
             <Link to="/">
               <button className="btn btn-primary" type="button">
                 <BsArrowLeftSquare /> Visitor Page

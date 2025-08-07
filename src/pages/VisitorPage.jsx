@@ -7,12 +7,11 @@ export default function VisitorPage() {
 
   const currentUser = useRef("");
 
-  const { data,users, setUsers,current, setCurrent} = useContext(EventContext);
-
+  const { data,users, setUsers,current, setCurrent, count,setCount} = useContext(EventContext);
   const HandleOnClick = () => {
-    console.log("clicked");
     setUsers([...users, currentUser.current.value]);
     setCurrent(currentUser.current.value);
+    setCount(users.length+1);
   };
 
   // const { data, setData } = useTrailContext();
@@ -28,7 +27,7 @@ export default function VisitorPage() {
 
   return (
     <>
-      <div className="border container my-4">
+      <div className="border container my-4 w-50">
         <label htmlFor="" className="mx-5 mt-5">
           {" "}
           <CgProfile /> Enter Your Name
@@ -44,6 +43,7 @@ export default function VisitorPage() {
         </div>
         <div className="container px-5 ">
           <h1>Welcome : {current}</h1>
+          <h3>User Count : {count}</h3>
           <ul className="list-group my-5">
             {users.map((ele) => (
               <li className="list-group-item" key={ele}>{ele}</li>

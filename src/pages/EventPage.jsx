@@ -25,7 +25,7 @@ export default function EventPage() {
 
   return (
     <>
-      <div className="border container my-4">
+      <div className="border container my-4 w-50">
         <label htmlFor="" className="mx-5 mt-5">
           <CgProfile /> Organizer Name
         </label>
@@ -42,16 +42,16 @@ export default function EventPage() {
           <button
             className="btn btn-primary"
             type="button"
-            onClick={HandleOnClick}
+            onClick={HandleOnDelete}
           >
-            Save Event Information
+            Delete Current Events
           </button>
           <button
             className="btn btn-primary"
             type="button"
-            onClick={HandleOnDelete}
+            onClick={HandleOnClick}
           >
-            Delete Current Events
+            Save Event Information
           </button>
         </div>
         <div className="container px-5 ">
